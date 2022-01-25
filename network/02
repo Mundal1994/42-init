@@ -1,0 +1,4 @@
+ipconfig getifaddr en0
+ipconfig getoption en0 subnet_mask
+
+ipconfig getifaddr en1
