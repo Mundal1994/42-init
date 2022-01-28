@@ -1,0 +1,6 @@
+#Need to decide on how much information to display
+#because the question ask for a table maybe the first option is best
+
+lsblk
+lsblk -o NAME
+lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT

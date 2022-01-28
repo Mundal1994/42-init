@@ -1,0 +1,5 @@
+SSH keys are used as a safer means for authorization and for the computer to know if the user has the correct access rights or not.
+RSA SSH key pairs are generated and stored in a hidden file in the user's home directory called .ssh
+The exact location is the below.
+~/.ssh/id_rsa
+~/.ssh/id_rsa.pub
