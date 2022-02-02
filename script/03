@@ -1,0 +1,24 @@
+#!/bin/bash
+FILE=".git/config"
+remote='[remote "all"]'
+repo_git="	url = git@github.com:Mundal1994/init.git"
+has_all=0
+
+while IFS= read -r line
+do
+	if [[ "$line" == "$remote" ]]; then
+		echo "already has remote 'all' command."
+		((has_all++))
+	fi
+done < "$FILE"
+
+if [[ $has_all == 0 ]]; then
+	while IFS= read -r line
+	do
+		if [[ "$line" == *"git@vogsphere-v2.hive.fi"* ]]; then
+			repo_hive=$line
+			printf "$remote\n$repo_hive\n$repo_git\n" >> $FILE
+			break
+		fi
+	done < "$FILE"
+fi
