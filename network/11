@@ -1,1 +1,5 @@
-<insert name> && 10.13.254.254
+make explanation
+What Is NAT? NAT stands for network address translation. It's a way to map multiple local private addresses to a public one before transferring the information. Organizations that want multiple devices to employ a single IP address use NAT, as do most home routers.
+Network Address Translation (NAT) conserves IP addresses by enabling private IP networks using unregistered IP addresses to go online. Before NAT forwards packets between the networks it connects, it translates the private internal network addresses into legal, globally unique addresses.
+
+nat (10.60.1.1)  0.295 ms  0.206 ms  0.265 ms
