@@ -1,5 +1,6 @@
-Graphic session
-
+GRAPHIC SESSION
+When starting the system a 'display/login manager' will show.
+1. enter username and password
 
 SHH SESSION
 Connecting to VM via shh:
@@ -15,7 +16,6 @@ Connecting to VM via shh:
 	ipconfig
 	OR
 	ip a
-6. in iterm run the following command with the number you found in previous step.
-	ssh root@10.13.200.31
-You should now be connected to your VM root.
-7. To connect as user 
+6. in iterm run the following command with the IP adress you found in previous step.
+	ssh username@ip.address
+enter password if asked
