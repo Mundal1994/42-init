@@ -1,6 +1,1 @@
-#decide between one of them
-
-# more info
 who
-# displays only name
-who | cut -d' ' -f1 | sort | uniq

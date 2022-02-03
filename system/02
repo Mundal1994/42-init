@@ -1,1 +1,1 @@
-hostname newname
+sudo hostnamectl set-hostname "newname"

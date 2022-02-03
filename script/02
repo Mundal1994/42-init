@@ -1,1 +1,12 @@
 #!/bin/bash
+
+
+
+
+#check that you are not trying to delete current user
+#delete remaining users
+#elser user doesn't exist
+
+
+#sudo killall -u
+#sudo userdel -rf > /dev/null 2>&1

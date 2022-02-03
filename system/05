@@ -1,1 +1,1 @@
-sudo systemctl status ssh
+systemctl status ssh

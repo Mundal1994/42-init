@@ -1,2 +1,1 @@
-vi /etc/hostname
-invoke-rc.d hostname.sh start
+/etc/hostname
