@@ -18,4 +18,4 @@ Connecting to VM via shh:
 	ip a
 6. in iterm run the following command with the IP adress you found in previous step.
 	ssh username@ip.address
-enter password if asked
+7. enter password if asked
