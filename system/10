@@ -1,6 +1,1 @@
-
-fdisk
-
-lsblk
-lsblk -o NAME
-lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINT
+fdisk -l
