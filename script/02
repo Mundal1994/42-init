@@ -2,30 +2,27 @@
 user="$(whoami)"
 
 #lock user account
-passwd -l "$user"
-
-#backup files
-tar -zcvf
+#passwd -l "$user"
 
 #kill running processes
-pgrep -u "$user"
-ps -fp $(pgrep -u "$user")
-killall -KILL -u "$user"
+#pgrep -u "$user"
+#ps -fp $(pgrep -u "$user")
+#killall -KILL -u "$user"
 
 #delete at jobs and remove cron jobs
-find /var/spool/at/ -name "[^.}*" -type f -user "$user" -delete
-crontab -r -u "$user"
+#find /var/spool/at/ -name "[^.}*" -type f -user "$user" -delete
+#crontab -r -u "$user"
 
 #delete print jobs
-lprm "$user"
+#lprm "$user"
 
 #delete account
-userdel -r "$user"
+#userdel -r "$user"
 
 #su -
-#killall -u "$user"
-#deluser -Z -r -f "$user"
-#rm -r /home/"$user"
+sudo killall -u "$user"
+sudo deluser -Z -r -f "$user"
+rm -r /home/"$user"
 
 #response=0
 
