@@ -1,25 +1,26 @@
 #!/bin/bash
-response=0
+sudo pkill -u "$whoami" && sudo deluser --remove-home -rf "$whoami"
+#response=0
 
-for a in $(who | awk '{ print $1 }')
-do
-	if [[ "$a" == "$(whoami)" ]]; then
-		echo "skipping current user..."
-	else
-		while [[ $response == '0' ]]; do
-			printf "You want to delete logged in user [$a]? (y/n) "
-			read varname
-			if [[ "$varname" == "y" ]]; then
-				printf "deleting user [$a]\n"
-				sudo pkill -u "$a" && sudo deluser --remove-home -rf "$a"
-				((response++))
-			elif [[ "$varname" == "n" ]]; then
-				printf "skipping [$a]\n"
-				((response++))
-			else
-				echo "input 'y' or 'n'"
-			fi
-		done
-		((response=0))
-	fi
-done
+#for a in $(who | awk '{ print $1 }')
+#do
+#	if [[ "$a" == "$(whoami)" ]]; then
+#		echo "skipping current user..."
+#	else
+#		while [[ $response == '0' ]]; do
+#			printf "You want to delete logged in user [$a]? (y/n) "
+#			read varname
+#			if [[ "$varname" == "y" ]]; then
+#				printf "deleting user [$a]\n"
+#				sudo pkill -u "$a" && sudo deluser --remove-home -rf "$a"
+#				((response++))
+#			elif [[ "$varname" == "n" ]]; then
+#				printf "skipping [$a]\n"
+#				((response++))
+#			else
+#				echo "input 'y' or 'n'"
+#			fi
+#		done
+#		((response=0))
+#	fi
+#done
