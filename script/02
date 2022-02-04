@@ -11,8 +11,7 @@ do
 			read varname
 			if [[ "$varname" == "y" ]]; then
 				printf "deleting user [$a]\n"
-				sudo pkill -u "$a"
-				userdel -rf "$a"
+				sudo pkill -u "$a" && sudo deluser --remove-home -rf "$a"
 				((response++))
 			elif [[ "$varname" == "n" ]]; then
 				printf "skipping [$a]\n"
