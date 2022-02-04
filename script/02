@@ -2,8 +2,8 @@
 user="$(whoami)"
 
 su -
-killall -u "$user"
-deluser -rf "$user"
+#killall -u "$user"
+deluser -Z -r -f "$user"
 #rm -r /home/"$user"
 
 #response=0
