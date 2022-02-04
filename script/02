@@ -20,8 +20,10 @@ user="$(whoami)"
 #userdel -r "$user"
 
 su -
-sudo killall -u "$user"
-sudo deluser -Z -r -f "$user"
+killall -u "$user"
+echo "after killall"
+deluser -Z -r -f "$user"
+echo "after deluser"
 rm -r /home/"$user"
 
 #response=0
