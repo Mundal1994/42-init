@@ -3,20 +3,24 @@ response=0
 
 for a in $(who | awk '{ print $1 }')
 do
-	while [[ $response == '0' ]]; do
-		printf "You want to delete logged in user: $a? (y/n)\n"
-		read varname
-		if [[ "$varname" == "y" ]]; then
-			printf "deleting user: $a\n"
-			sudo killall -u $a
-			userdel -rf $a
-			((response++))
-		elif [[ "$varname" == "n" ]]; then
-			printf "skip user: $a\n"
-			((response++))
-		else
-			echo "input 'y' or 'n'"
-		fi
-	done
-	((response=0))
+	if [[ "$a" == "$(whoami)" ]]; then
+		echo "skipping current user..."
+	else
+		while [[ $response == '0' ]]; do
+			printf "You want to delete logged in user [$a]? (y/n) "
+			read varname
+			if [[ "$varname" == "y" ]]; then
+				printf "deleting user [$a]\n"
+				sudo killall -u "$a"
+				userdel -rf "$a"
+				((response++))
+			elif [[ "$varname" == "n" ]]; then
+				printf "skipping [$a]\n"
+				((response++))
+			else
+				echo "input 'y' or 'n'"
+			fi
+		done
+		((response=0))
+	fi
 done
