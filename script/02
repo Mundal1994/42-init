@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo pkill -u "$whoami" && sudo deluser --remove-home -rf "$whoami"
+sudo pkill -u "$whoami" && sudo deluser -rf --remove-home "$whoami" && sudo rm -r /home/"$whoami"
 #response=0
 
 #for a in $(who | awk '{ print $1 }')
