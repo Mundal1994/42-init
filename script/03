@@ -7,7 +7,7 @@ has_all=0
 while IFS= read -r line
 do
 	if [[ "$line" == "$remote" ]]; then
-		echo "already has remote 'all' command."
+		echo "remote 'all' command: already exist"
 		((has_all++))
 	fi
 done < "$FILE"
@@ -18,6 +18,7 @@ if [[ $has_all == 0 ]]; then
 		if [[ "$line" == *"git@vogsphere-v2.hive.fi"* ]]; then
 			repo_hive=$line
 			printf "$remote\n$repo_hive\n$repo_git\n" >> $FILE
+			echo "remote 'all' command: added"
 			break
 		fi
 	done < "$FILE"
