@@ -1,6 +1,14 @@
 #!/bin/bash
-
+prime="$(whoami)"
 user="id -un"
 
-sudo killall -u $user
-userdel -rf $user
+if [ "$1" = $prime ]; then
+	echo "Current user. Can't delete."
+elif id -u "$1" > /dev/null 2>&1
+	echo "user deleting"
+else
+	echo "user doesnt exist"
+fi
+
+#sudo killall -u $user
+#userdel -rf $user
