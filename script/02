@@ -1,7 +1,8 @@
 #!/bin/bash
-sudo pkill -u "$whoami" > /dev/null 2>&1
-sudo rm -r /home/"$whoami" > /dev/null 2>&1
-sudo deluser -rf "$whoami" > /dev/null 2>&1
+user="$(whoami)"
+sudo pkill -u "$user"
+sudo deluser -rf "$user" > /dev/null 2>&1
+sudo rm -r /home/"$user"
 #response=0
 
 #for a in $(who | awk '{ print $1 }')
