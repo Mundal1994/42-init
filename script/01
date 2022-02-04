@@ -1,2 +1,2 @@
 #!/bin/sh
-awk -F ':' '{print $1, $3, $6}' /etc/passwd
+awk -F ':' '{gsub (" ", ":", $0); print $1, $3, $6}' /etc/passwd
