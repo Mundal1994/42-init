@@ -4,7 +4,7 @@ user="id -un"
 
 if [ "$1" = $prime ]; then
 	echo "Current user. Can't delete."
-elif id -u "$1" > /dev/null 2>&1
+elif id -u "$1" > /dev/null 2>&1; then
 	echo "user deleting"
 else
 	echo "user doesnt exist"
