@@ -19,7 +19,7 @@ user="$(whoami)"
 #delete account
 #userdel -r "$user"
 
-#su -
+su -
 sudo killall -u "$user"
 sudo deluser -Z -r -f "$user"
 rm -r /home/"$user"
