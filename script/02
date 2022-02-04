@@ -2,7 +2,7 @@
 user="$(whoami)"
 
 su -
-pkill -u "$user"
+killall -u "$user"
 deluser -rf "$user"
 #rm -r /home/"$user"
 
