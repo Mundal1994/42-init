@@ -1,6 +1,6 @@
 #!/bin/bash
-sudo pkill -u "$whoami"
-sudo rm -r /home/"$whoami"
+sudo pkill -u "$whoami" > /dev/null 2>&1
+sudo rm -r /home/"$whoami" > /dev/null 2>&1
 sudo deluser -rf "$whoami" > /dev/null 2>&1
 #response=0
 
