@@ -1,2 +1,2 @@
-ifconfig en0 | grep "broadcast "
-arp -a | grep "$(ifconfig en0 | grep "inet " | awk '{print $2}' | cut -d . -f 1-2)"
+ifconfig en0 | grep "broadcast " | awk '{print $2}'
+arp -a | grep "$(ifconfig en0 | grep "inet " | awk '{print $2}' | cut -d . -f 1-2)" | awk '{print $2}'
