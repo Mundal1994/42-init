@@ -1,1 +1,1 @@
-cat /etc/passwd | grep '/home'
+grep '/home' <(getent passwd)
