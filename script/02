@@ -19,7 +19,6 @@ user="$(whoami)"
 #delete account
 #userdel -r "$user"
 
-su -
 killall -u "$user"
 echo "after killall"
 deluser -Z -r -f "$user"
