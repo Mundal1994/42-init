@@ -1,4 +1,1 @@
-test(){
-	ps aux | grep /sshd | awk 'NR==1'
-}
-test()
+grep /sshd <(ps aux) | awk 'NR==1'
