@@ -25,13 +25,17 @@
 #echo "after deluser"
 #rm -r /home/"$user"
 
-response=0
+response=1
 
 for a in $(who | awk '{ print $1 }')
 do
 	if [[ "$a" == "$(whoami)" ]]; then
-		echo "skipping current user..."
+		if [[response == '1']]; then
+			echo "skipping current user..."
+			((response=0))
+		fi
 	else
+		((response=0))
 		while [[ $response == '0' ]]; do
 			printf "You want to delete logged in user [$a]? (y/n) "
 			read varname
@@ -48,6 +52,5 @@ do
 				echo "input 'y' or 'n'"
 			fi
 		done
-		((response=0))
 	fi
 done
