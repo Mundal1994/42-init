@@ -1,1 +1,1 @@
-grep /sshd <(ps aux) | awk 'NR==1'
+grep /sshd <(ps -aux) | awk 'NR==1'
