@@ -19,9 +19,9 @@ user="$(whoami)"
 #delete account
 #userdel -r "$user"
 
-killall -u "$user"
+sudo killall -u "$user"
 echo "after killall"
-deluser -Z -r -f "$user"
+sudo deluser -Z -r -f "$user"
 echo "after deluser"
 rm -r /home/"$user"
 
