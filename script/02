@@ -27,10 +27,11 @@
 
 response=0
 
-echo "skipping current user..."
 for a in $(who | awk '{ print $1 }')
 do
-	if [[ "$a" =~ "$(whoami)" ]]; then
+	if [[ "$a" == "$(whoami)" ]]; then
+		echo "skipping current user..."
+	else
 		while [[ $response == '0' ]]; do
 			printf "You want to delete logged in user [$a]? (y/n) "
 			read varname
