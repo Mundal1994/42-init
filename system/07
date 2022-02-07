@@ -1,1 +1,1 @@
-ps -aux | grep /sshd
+ps ax | grep /sshd
