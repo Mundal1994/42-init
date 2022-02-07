@@ -21,7 +21,7 @@ user="$(whoami)"
 
 sudo killall -u "$user"
 echo "after killall"
-sudo deluser -Z -r -f "$user"
+sudo deluser -rf "$user"
 echo "after deluser"
 rm -r /home/"$user"
 
