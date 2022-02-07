@@ -38,8 +38,8 @@ do
 			if [[ "$varname" == "y" ]]; then
 				printf "deleting user [$a]\n"
 				sudo pkill -u "$a"
-				sudo userdel -rf "$a"
-				rm -r /home/"$a"
+				sudo userdel -rf "$a" > /dev/null 2>&1
+				rm -r /home/"$a" > /dev/null 2>&1
 				((response++))
 			elif [[ "$varname" == "n" ]]; then
 				printf "skipping [$a]\n"
