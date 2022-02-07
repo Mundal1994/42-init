@@ -1,1 +1,2 @@
-ps aux | grep /sshd | awk 'NR==1'
+cat /var/run/sshd.pid
+ps aux | grep /sshd | grep -v grep
