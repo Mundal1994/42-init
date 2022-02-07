@@ -1,5 +1,5 @@
 #!/bin/bash
-user="$(whoami)"
+#user="$(whoami)"
 
 #lock user account
 #passwd -l "$user"
@@ -19,33 +19,34 @@ user="$(whoami)"
 #delete account
 #userdel -r "$user"
 
-sudo killall -u "$user"
-echo "after killall"
-sudo userdel -rf "$user"
-echo "after deluser"
-rm -r /home/"$user"
+#sudo killall -u "$user"
+#echo "after killall"
+#sudo userdel -rf "$user"
+#echo "after deluser"
+#rm -r /home/"$user"
 
 #response=0
 
-#for a in $(who | awk '{ print $1 }')
-#do
-#	if [[ "$a" == "$(whoami)" ]]; then
-#		echo "skipping current user..."
-#	else
-#		while [[ $response == '0' ]]; do
-#			printf "You want to delete logged in user [$a]? (y/n) "
-#			read varname
-#			if [[ "$varname" == "y" ]]; then
-#				printf "deleting user [$a]\n"
-#				sudo pkill -u "$a" && sudo deluser --remove-home -rf "$a"
-#				((response++))
-#			elif [[ "$varname" == "n" ]]; then
-#				printf "skipping [$a]\n"
-#				((response++))
-#			else
-#				echo "input 'y' or 'n'"
-#			fi
-#		done
-#		((response=0))
-#	fi
-#done
+for a in $(who | awk '{ print $1 }')
+do
+	if [[ "$a" == "$(whoami)" ]]; then
+		echo "skipping current user..."
+	else
+		while [[ $response == '0' ]]; do
+			printf "You want to delete logged in user [$a]? (y/n) "
+			read varname
+			if [[ "$varname" == "y" ]]; then
+				printf "deleting user [$a]\n"
+				sudo pkill -u "$a"
+				sudo deluser --remove-home -rf "$a"
+				((response++))
+			elif [[ "$varname" == "n" ]]; then
+				printf "skipping [$a]\n"
+				((response++))
+			else
+				echo "input 'y' or 'n'"
+			fi
+		done
+		((response=0))
+	fi
+done
