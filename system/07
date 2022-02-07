@@ -1,2 +1,1 @@
-#!/bin/bash
-grep /sshd <(ps -aux) | awk 'NR==1'
+sudo grep /sshd <(ps -aux) | awk 'NR==1'
