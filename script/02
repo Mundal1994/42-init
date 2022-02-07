@@ -30,7 +30,7 @@ response=1
 for a in $(who | awk '{ print $1 }')
 do
 	if [[ "$a" == "$(whoami)" ]]; then
-		if [[$response == '1']]; then
+		if [[ $response == '1' ]]; then
 			echo "skipping current user..."
 			((response=0))
 		fi
