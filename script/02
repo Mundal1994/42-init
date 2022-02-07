@@ -1,30 +1,4 @@
 #!/bin/bash
-#user="$(whoami)"
-
-#lock user account
-#passwd -l "$user"
-
-#kill running processes
-#pgrep -u "$user"
-#ps -fp $(pgrep -u "$user")
-#killall -KILL -u "$user"
-
-#delete at jobs and remove cron jobs
-#find /var/spool/at/ -name "[^.}*" -type f -user "$user" -delete
-#crontab -r -u "$user"
-
-#delete print jobs
-#lprm "$user"
-
-#delete account
-#userdel -r "$user"
-
-#sudo killall -u "$user"
-#echo "after killall"
-#sudo userdel -rf "$user"
-#echo "after deluser"
-#rm -r /home/"$user"
-
 response=1
 
 for a in $(who | awk '{ print $1 }')
