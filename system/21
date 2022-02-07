@@ -1,1 +1,1 @@
-getent passwd | awk -F: '999<$3 && $3<6000 {print $1}'
+cat /etc/passwd | grep '/home' | cut -d: -f1
