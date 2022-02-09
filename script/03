@@ -7,7 +7,7 @@ while IFS= read -r line
 do
 	if [[ "$line" == "$remote" ]]; then
 		echo "remote 'all' command: already exist"
-		((has_all++))
+		exit 0
 	elif [[ "$line" == *"git@vogsphere-v2.hive.fi"* ]]; then
 		repo_hive=$line
 	fi
@@ -16,9 +16,7 @@ done < "$FILE"
 printf "github repo: \n"
 read INPUT
 echo "you input the git repo [$INPUT]"
-
-if [[ $has_all == 0 ]]; then
-	repo_git="	url = git@github.com:Mundal1994/$INPUT.git"
-	printf "$remote\n$repo_hive\n$repo_git\n" >> $FILE
-	echo "remote 'all' command: added"
-fi
+repo_git="	url = git@github.com:Mundal1994/$INPUT.git"
+printf "$remote\n$repo_hive\n$repo_git\n" >> $FILE
+echo "remote 'all' command: added"
+exit 0
